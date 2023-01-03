@@ -32,7 +32,7 @@ accept: "*/*",
 }).then((response) => {
 console.log(" [ YouTube Search By KryTek Api ]\n\n");
 _Found = `
-${console.log(chalk.green("💡STATUS:: ") + chalk.white(response.data.status))}
+${console.log(chalk.green("💡STATUS: ") + chalk.white(response.data.status))}
 ${console.log(chalk.green("🔑KRYTEK_ID: ") + chalk.white(response.data._id))}
 ${console.log(chalk.green("📍YT_ID: ") + chalk.white(response.data._youtube_search[0].YT_ID))}
 ${console.log(chalk.green("⚡TITLE: ") + chalk.white(response.data._youtube_search[0].TITLE))}
