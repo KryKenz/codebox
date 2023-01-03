@@ -35,59 +35,64 @@ var root = api.Router();
 var spinnies = new Spinnies();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву кяукєηz ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 root.get("/", async (req, resp) => {
-  if (req.query.q) {
-    raw = await YouTube_Scrape(req.query.q);
-    ions = raw.videos.slice(0, 1);
-    ions.forEach(async function (cobra) {
-      YouTube_Downloader.audioScrapyard(cobra.url).then((data) => {
-        YouTube_Downloader.videoScrapyard(cobra.url).then(async (_data) => {
-          _youtube = {
-            status: "✓ success ✓",
-            _id: uuidv4(),
-            _youtube_search: [
-              {
-                YT_ID: cobra.videoId,
-                TITLE: cobra.title,
-                UPLOADED: cobra.ago,
-                VIEWS: cobra.views,
-                DURATION_FULL: cobra.duration.timestamp,
-                DURATION_SECONDS: cobra.duration.seconds,
-              },
-              {
-                AUTHOR_NAME: cobra.author.name,
-                AUTHOR_CHANNEL: cobra.author.url,
-              },
-              {
-                LINK: cobra.url,
-                THUMB: cobra.thumbnail,
-                DESCRIPTION: cobra.description,
-              },
-            ],
-            _youtube_downloader: [
-              {
-                VIDEO_QUALITY: _data.videoQuality,
-                VIDEO_SIZE:
-                  _data.videoSize.substring(0, _data.videoSize.indexOf(" ")) +
-                  " MB",
-                VIDEO_RAW_LINK: _data.videoLink,
-              },
-              {
-                AUDIO_QUALITY: data.audioQuality,
-                AUDIO_SIZE: data.audioSize,
-                AUDIO_RAW_LINK: data.audioLink,
-              },
-            ],
-          };
-          resp.send(_youtube);
-          console.log(_youtube);
+  try {
+    if (req.query.q) {
+      raw = await YouTube_Scrape(req.query.q);
+      ions = raw.videos.slice(0, 1);
+      ions.forEach(async function (cobra) {
+        YouTube_Downloader.audioScrapyard(cobra.url).then((data) => {
+          YouTube_Downloader.videoScrapyard(cobra.url).then(async (_data) => {
+            _youtube = {
+              status: "✓ success ✓",
+              _id: uuidv4(),
+              _youtube_search: [
+                {
+                  YT_ID: cobra.videoId,
+                  TITLE: cobra.title,
+                  UPLOADED: cobra.ago,
+                  VIEWS: cobra.views,
+                  DURATION_FULL: cobra.duration.timestamp,
+                  DURATION_SECONDS: cobra.duration.seconds,
+                },
+                {
+                  AUTHOR_NAME: cobra.author.name,
+                  AUTHOR_CHANNEL: cobra.author.url,
+                },
+                {
+                  LINK: cobra.url,
+                  THUMB: cobra.thumbnail,
+                  DESCRIPTION: cobra.description,
+                },
+              ],
+              _youtube_downloader: [
+                {
+                  VIDEO_QUALITY: _data.videoQuality,
+                  VIDEO_SIZE:
+                    _data.videoSize.substring(0, _data.videoSize.indexOf(" ")) +
+                    " MB",
+                  VIDEO_RAW_LINK: _data.videoLink,
+                },
+                {
+                  AUDIO_QUALITY: data.audioQuality,
+                  AUDIO_SIZE: data.audioSize,
+                  AUDIO_RAW_LINK: data.audioLink,
+                },
+              ],
+            };
+            resp.send(_youtube);
+            console.log(_youtube);
+          });
         });
       });
-    });
-  } else {
-    return resp.send({
-      message:
-        "[ ERROR ]: Usage (/youtube?q=song name) or (/youtube?q=https://youtube.com)",
-    });
+    } else {
+      return resp.send({
+        message:
+          "[ ERROR ]: Usage (/youtube?q=song name) or (/youtube?q=https://youtube.com)",
+      });
+    }
+  } catch (error) {
+    console.log(error);
+    resp.redirect("/404");
   }
 });
 module.exports = root;

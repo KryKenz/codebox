@@ -96,7 +96,8 @@ root.get("/:item", async (req, resp) => {
         "[ HENTAI-ERROR ]: Available Commands Are: bdsm,blowjob,cum,doujin,feet,femdom,foxgirl,gifs,glasses,hentai,netorare,maid,masturbation,orgy,panties,pussy,school,succubus,tentacles,uglyBastard,uniform,yuri,zettaiRyouiki"
       );
   } catch (error) {
-    return resp.send(error);
+    console.log(error);
+    resp.redirect("/404");
   }
 });
 module.exports = root;

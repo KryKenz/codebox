@@ -108,7 +108,8 @@ root.get("/:nsfw", async (req, resp) => {
         "[ NSFW-ERROR ]: Available Commands Are: 4k,blowjobs,milf,lactating,pussy,cumslut"
       );
   } catch (error) {
-    return resp.send(error);
+    console.log(error);
+    resp.redirect("/404");
   }
 });
 module.exports = root;
