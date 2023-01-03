@@ -19,6 +19,7 @@ require("./global");
 νℓpage.use("/hentai", require("./routes/hentai"));
 νℓpage.use("/anime", require("./routes/anime"));
 νℓpage.use("/nsfw", require("./routes/nsfw"));
+νℓpage.use("/make", require("./routes/make"));
 νℓpage.use(bodyParser.json());
 νℓpage.engine("html", require("ejs").renderFile);
 νℓpage.use(express.static(__dirname + "/views"));
@@ -30,12 +31,11 @@ require("./global");
   else console.log("🦋Info:", "Live On Website Host");
 });
 νℓpage.get("/", (req, resp) => {
-  resp.send("Hello From Krykenz");
+  resp.sendFile(__dirname + "/web/index.html");
 });
 νℓpage.get("/404", (req, resp) => {
   resp.render(__dirname + "/views/404.html");
 });
-
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву νℓpage ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 // ╔⧉༻ [ KryKenz Multi Module Api ]
 // ║ 🐞𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫𝐬 +918436686758,917430922909

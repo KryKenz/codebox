@@ -36,5 +36,8 @@
     "spinnies": "^0.5.1",
     "tinyurl": "^1.1.7",
     "unirest": "^0.6.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
   }
 }
