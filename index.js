@@ -9,8 +9,9 @@
 // ║ In short, Fork At Your Own Risk.
 // ╚════════════╝
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву кяукєηz ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-require("./global");
+var express = require("express");
 var кяукєηz = express();
+require("./global");
 кяукєηz.use("/ytdownload", require("./routes/ytdownload"));
 кяукєηz.use("/animation", require("./routes/animation"));
 кяукєηz.use("/ytsearch", require("./routes/ytsearch"));
