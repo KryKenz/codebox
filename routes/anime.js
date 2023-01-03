@@ -35,51 +35,52 @@ var api = require("express");
 var root = api.Router();
 var spinnies = new Spinnies();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву кяукєηz ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-root.get("/", (req, resp) => {
-  return resp.send("[ ANIME ]: usage /anime/anime+name");
-});
-
-root.get("/:animation", async (req, resp) => {
+root.get("/", async (req, resp) => {
   try {
-    raw = req.params.animation.split(" ").join("+").toLowerCase();
-    console.log("[ ANIME ]: " + raw);
-    malScraper.getInfoFromName(raw).then((cobra) => {
-      var Found = [
-        {
-          _id: uuidv4(),
-          MAL_ID: cobra.id,
-          TITLE: cobra.title,
-          EN_TITLE: cobra.englishTitle,
-          JP_TITLE: cobra.japaneseTitle,
-          IMAGE: cobra.picture,
-          PREMIERED: cobra.premiered,
-          WEBPAGE: cobra.url,
-          BROADCAST: cobra.broadcast,
-          GENRES: cobra.genres,
-          TYPE: cobra.type,
-          EPISODES: cobra.episodes,
-          RATING: cobra.rating,
-          AIRED: cobra.aired,
-          SCORE: cobra.score,
-          FAVORITES: cobra.favorites,
-          RANK: cobra.ranked,
-          DURATION: cobra.duration,
-          STUDIOS: cobra.studios,
-          PRODUCERS: cobra.producers,
-          POPULARITY: cobra.popularity,
-          TOTAL_MEMBERS: cobra.members,
-          SCORE_STATUS: cobra.scoreStats,
-          SOURCE: cobra.source,
-          SYNONYMS: cobra.synonyms,
-          STATUS: cobra.status,
-          SYNOPSIS: cobra.synopsis,
-          CHARACTERS: cobra.charaters,
-          STAFF: cobra.staff,
-        },
-      ];
-      resp.send(Found);
-      console.log(Found);
-    });
+    if (req.query.q) {
+      malScraper.getInfoFromName(req.query.q).then((cobra) => {
+        var Found = [
+          {
+            status: "✓ success ✓",
+            _id: uuidv4(),
+            MAL_ID: cobra.id,
+            TITLE: cobra.title,
+            EN_TITLE: cobra.englishTitle,
+            JP_TITLE: cobra.japaneseTitle,
+            IMAGE: cobra.picture,
+            PREMIERED: cobra.premiered,
+            WEBPAGE: cobra.url,
+            BROADCAST: cobra.broadcast,
+            GENRES: cobra.genres,
+            TYPE: cobra.type,
+            EPISODES: cobra.episodes,
+            RATING: cobra.rating,
+            AIRED: cobra.aired,
+            SCORE: cobra.score,
+            FAVORITES: cobra.favorites,
+            RANK: cobra.ranked,
+            DURATION: cobra.duration,
+            STUDIOS: cobra.studios,
+            PRODUCERS: cobra.producers,
+            POPULARITY: cobra.popularity,
+            TOTAL_MEMBERS: cobra.members,
+            SCORE_STATUS: cobra.scoreStats,
+            SOURCE: cobra.source,
+            SYNONYMS: cobra.synonyms,
+            STATUS: cobra.status,
+            SYNOPSIS: cobra.synopsis,
+            CHARACTERS: cobra.charaters,
+            STAFF: cobra.staff,
+          },
+        ];
+        resp.send(Found);
+        console.log(Found);
+      });
+    } else {
+      return resp.send({
+        message: "[ ERROR ]: Usage (/anime?q=anime name)",
+      });
+    }
   } catch (error) {
     return resp.send(error);
   }
