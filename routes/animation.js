@@ -28,12 +28,13 @@ var bodyParser = require("body-parser");
 var animation = require("anime-actions");
 var { fromBuffer } = require("file-type");
 var YouTube_Scrape = require("krytek-yts");
-var express = require("express");
-var router = express.Router();
-var Spinnies = require("spinnies");
-var spinnies = new Spinnies();
 var { YTAudio, YTVideo } = require("../src/y2mate");
 var YouTube_Downloader = require("../src/YouTube_Downloader");
+("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву кяукєηz ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
+var Spinnies = require("spinnies");
+var api = require("express");
+var router = api.Router();
+var spinnies = new Spinnies();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву кяукєηz ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 router.get("/", (req, resp) => {
   return resp.send(

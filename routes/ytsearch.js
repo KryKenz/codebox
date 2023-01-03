@@ -28,18 +28,19 @@ var bodyParser = require("body-parser");
 var animation = require("anime-actions");
 var { fromBuffer } = require("file-type");
 var YouTube_Scrape = require("krytek-yts");
-var express = require("express");
-var router = express.Router();
-var Spinnies = require("spinnies");
-var spinnies = new Spinnies();
 var { YTAudio, YTVideo } = require("../src/y2mate");
 var YouTube_Downloader = require("../src/YouTube_Downloader");
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву кяукєηz ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-router.get("/", (req, resp) => {
+var Spinnies = require("spinnies");
+var api = require("express");
+var root = api.Router();
+var spinnies = new Spinnies();
+("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву кяукєηz ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
+root.get("/", (req, resp) => {
   return resp.send("[ WELCOME ]:");
 });
 
-router.get("/:ytsearch", async (req, resp) => {
+root.get("/:ytsearch", async (req, resp) => {
   raw = await YouTube_Scrape(
     req.params.ytsearch.split(" ").join("+").toLowerCase()
   );
@@ -63,8 +64,8 @@ router.get("/:ytsearch", async (req, resp) => {
   resp.send(Tionary);
 });
 
-module.exports = router;
-("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву router ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
+module.exports = root;
+("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву root ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 // ╔⧉༻ [ KryKenz Multi Module Api ]
 // ║ 🐞𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫𝐬 +918436686758,917430922909
 // ║
@@ -74,4 +75,4 @@ module.exports = router;
 // ║ Forking Repo is fine. But if you edit something we will not provide any help.
 // ║ In short, Fork At Your Own Risk.
 // ╚════════════╝
-("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву router ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
+("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву root ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
