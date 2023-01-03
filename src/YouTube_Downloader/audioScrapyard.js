@@ -61,6 +61,8 @@ async function audioScrapyard(url) {
       },
     }).then(async (res) => {
       var vr = load(res.data.result);
+      console.log(res.data.result);
+      console.log(vr);
       var audioSize = vr("div")
         .find("#mp3 > table > tbody > tr > td:nth-child(2)")
         .text();

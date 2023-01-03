@@ -16,6 +16,7 @@
     "anime-actions": "^1.0.6",
     "axios": "^1.2.2",
     "body-parser": "^1.20.1",
+    "buffer-to-data-url": "^1.0.0",
     "chalk": "^4.1.2",
     "cheerio": "^1.0.0-rc.12",
     "dotenv": "^16.0.3",
@@ -32,6 +33,7 @@
     "qs": "^6.11.0",
     "request": "^2.88.2",
     "spinnies": "^0.5.1",
-    "tinyurl": "^1.1.7"
+    "tinyurl": "^1.1.7",
+    "unirest": "^0.6.0"
   }
 }
