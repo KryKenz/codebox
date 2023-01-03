@@ -14,7 +14,6 @@ var qs = require("qs");
 var got = require("got");
 var axios = require("axios");
 var nhen = require("akaneko");
-var shrink = require("tinyurl");
 var request = require("request");
 var cheerio = require("cheerio");
 var { JSDOM } = require("jsdom");

@@ -14,7 +14,6 @@ var qs = require("qs");
 var got = require("got");
 var axios = require("axios");
 var nhen = require("akaneko");
-var shrink = require("tinyurl");
 var request = require("request");
 var cheerio = require("cheerio");
 var { JSDOM } = require("jsdom");
@@ -61,8 +60,6 @@ root.get("/:ytdownload", async (req, resp) => {
       THUMB: cobra.thumbnail,
       DURATION_SECONDS: cobra.duration.seconds,
       DURATION_STRING: cobra.duration.timestamp,
-      TINY_DIRECT_AUDIO: await shrink(postmanaud[0].link),
-      TINY_DIRECT_VIDEO: await shrink(postmanvid[0].link),
       DIRECT_AUDIO: postmanaud[0].link,
       DIRECT_VIDEO: postmanvid[0].link,
     });

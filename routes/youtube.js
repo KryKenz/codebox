@@ -14,7 +14,6 @@ var qs = require("qs");
 var got = require("got");
 var axios = require("axios");
 var nhen = require("akaneko");
-var shrink = require("tinyurl");
 var request = require("request");
 var cheerio = require("cheerio");
 var { JSDOM } = require("jsdom");
@@ -74,7 +73,6 @@ async function Tube(string, req, resp) {
           ],
           _youtube_downloader: [
             {
-              VIDEO_SHORT_LINK: await shrink.shorten(_data.videoLink),
               VIDEO_QUALITY: _data.videoQuality,
               VIDEO_SIZE:
                 _data.videoSize.substring(0, _data.videoSize.indexOf(" ")) +
@@ -82,7 +80,6 @@ async function Tube(string, req, resp) {
               VIDEO_RAW_LINK: _data.videoLink,
             },
             {
-              AUDIO_SHORT_LINK: await shrink.shorten(data.audioLink),
               AUDIO_QUALITY: data.audioQuality,
               AUDIO_SIZE: data.audioSize,
               AUDIO_RAW_LINK: data.audioLink,
