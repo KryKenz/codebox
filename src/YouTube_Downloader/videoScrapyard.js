@@ -38,7 +38,7 @@ async function regex(url) {
   try {
     var regex =
       /https:\/\/(?:www\.)?youtu(?:be\.com\/watch\?v=|\.be\/)([\w\-\_]*)(&(amp;)?[\w\?=]*)?/;
-    var result = url.match(YouTube_Regex);
+    var result = url.match(regex);
     return result[1];
   } catch {
     return false;
@@ -60,7 +60,6 @@ async function videoScrapyard(url) {
         ajax: 2,
       },
     }).then(async (res) => {
-      console.log(res.data.result);
       var vr = load(res.data.result);
       var videoSize = vr("div")
         .find("#mp4 > table > tbody > tr > td:nth-child(2)")

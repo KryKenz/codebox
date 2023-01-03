@@ -34,12 +34,11 @@ var api = require("express");
 var router = api.Router();
 var spinnies = new Spinnies();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву кяукєηz ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-
 async function regex(url) {
   try {
     var regex =
       /https:\/\/(?:www\.)?youtu(?:be\.com\/watch\?v=|\.be\/)([\w\-\_]*)(&(amp;)?[\w\?=]*)?/;
-    var result = url.match(YouTube_Regex);
+    var result = url.match(regex);
     return result[1];
   } catch {
     return false;
@@ -61,7 +60,6 @@ async function audioScrapyard(url) {
         ajax: 2,
       },
     }).then(async (res) => {
-      console.log(res.data.result);
       var vr = load(res.data.result);
       var audioSize = vr("div")
         .find("#mp3 > table > tbody > tr > td:nth-child(2)")
