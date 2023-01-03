@@ -24,7 +24,6 @@ var FormData = require("form-data");
 var FFmpeg = require("fluent-ffmpeg");
 const { v4: uuidv4 } = require("uuid");
 var malScraper = require("mal-scraper");
-var bodyParser = require("body-parser");
 var animation = require("anime-actions");
 var { fromBuffer } = require("file-type");
 var YouTube_Scrape = require("krytek-yts");

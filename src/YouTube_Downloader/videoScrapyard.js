@@ -13,7 +13,6 @@ var fs = require("fs");
 var qs = require("qs");
 var got = require("got");
 var axios = require("axios");
-var spinnies = new Spinnies();
 var nhen = require("akaneko");
 var shrink = require("tinyurl");
 var request = require("request");
@@ -29,6 +28,11 @@ var bodyParser = require("body-parser");
 var animation = require("anime-actions");
 var { fromBuffer } = require("file-type");
 var YouTube_Scrape = require("krytek-yts");
+("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву кяукєηz ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
+var Spinnies = require("spinnies");
+var api = require("express");
+var router = api.Router();
+var spinnies = new Spinnies();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву кяукєηz ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 async function regex(url) {
   try {
