@@ -1,4 +1,4 @@
-("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву router ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
+("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву кяукєηz ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 // ╔⧉༻ [ KryKenz Multi Module Api ]
 // ║ 🐞𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫𝐬 +918436686758,917430922909
 // ║
@@ -8,10 +8,34 @@
 // ║ Forking Repo is fine. But if you edit something we will not provide any help.
 // ║ In short, Fork At Your Own Risk.
 // ╚════════════╝
-("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву router ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-require("../global");
-var router = express.Router();
+("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву кяукєηz ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
+var fs = require("fs");
+var qs = require("qs");
+var got = require("got");
+var axios = require("axios");
+var spinnies = new Spinnies();
+var nhen = require("akaneko");
+var shrink = require("tinyurl");
+var request = require("request");
+var cheerio = require("cheerio");
+var { JSDOM } = require("jsdom");
+var express = require("express");
+var { load } = require("cheerio");
+var fetch = require("node-fetch");
+var Spinnies = require("spinnies");
+var FormData = require("form-data");
+var FFmpeg = require("fluent-ffmpeg");
 const { v4: uuidv4 } = require("uuid");
+var malScraper = require("mal-scraper");
+var bodyParser = require("body-parser");
+var animation = require("anime-actions");
+var { fromBuffer } = require("file-type");
+var YouTube_Scrape = require("krytek-yts");
+var { YTAudio, YTVideo } = require("../y2mate");
+var YouTube_Downloader = require("../YouTube_Downloader");
+var кяукєηz = express();
+var router = кяукєηz.Router();
+("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву кяукєηz ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 router.get("/", (req, resp) => {
   return resp.send(
     "[ NSFW ]: Available Commands Are: 4k,blowjobs,milf,lactating,pussy,cumslut"

@@ -9,7 +9,30 @@
 // ║ In short, Fork At Your Own Risk.
 // ╚════════════╝
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву кяукєηz ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-require("../global");
+var fs = require("fs");
+var qs = require("qs");
+var кяукєηz = express();
+var got = require("got");
+var axios = require("axios");
+var spinnies = new Spinnies();
+var nhen = require("akaneko");
+var shrink = require("tinyurl");
+var request = require("request");
+var express = require("express");
+var cheerio = require("cheerio");
+var { JSDOM } = require("jsdom");
+var express = require("express");
+var { load } = require("cheerio");
+var Spinnies = require("spinnies");
+var fetch = require("node-fetch");
+var FormData = require("form-data");
+var FFmpeg = require("fluent-ffmpeg");
+var malScraper = require("mal-scraper");
+var bodyParser = require("body-parser");
+var animation = require("anime-actions");
+var { fromBuffer } = require("file-type");
+var YouTube_Scrape = require("krytek-yts");
+("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву кяукєηz ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 const YTVideo = async (yutub, qualityny) => {
   function post(url, formdata) {
     return fetch(url, {

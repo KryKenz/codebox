@@ -10,6 +10,7 @@
 // ╚════════════╝
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву кяукєηz ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 require("./global");
+var кяукєηz = express();
 кяукєηz.use("/ytdownload", require("./routes/ytdownload"));
 кяукєηz.use("/animation", require("./routes/animation"));
 кяукєηz.use("/ytsearch", require("./routes/ytsearch"));
