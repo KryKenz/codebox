@@ -6,7 +6,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "build": "yarn install --ignore-engines",
+    "build": "npm install --silent --force",
     "start": "node index.js"
   },
   "dependencies": {
