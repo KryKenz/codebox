@@ -37,7 +37,6 @@ global.shrink = require("tinyurl");
 global.request = require("request");
 global.express = require("express");
 global.cheerio = require("cheerio");
-global.ytCore = require("ytdl-core");
 global.fetch = require("node-fetch");
 global.FormData = require("form-data");
 global.FFmpeg = require("fluent-ffmpeg");
