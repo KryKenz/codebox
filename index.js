@@ -19,7 +19,6 @@ require("./global");
 νℓpage.use("/hentai", require("./routes/hentai"));
 νℓpage.use("/anime", require("./routes/anime"));
 νℓpage.use("/nsfw", require("./routes/nsfw"));
-νℓpage.use("/make", require("./routes/make"));
 νℓpage.use(bodyParser.json());
 νℓpage.engine("html", require("ejs").renderFile);
 νℓpage.use(express.static(__dirname + "/views"));
