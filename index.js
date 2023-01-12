@@ -29,9 +29,6 @@ require("./global");
     console.log("🦋Info:", "Live On http://localhost:" + PORT);
   else console.log("🦋Info:", "Live On Website Host");
 });
-νℓpage.get("/", (req, resp) => {
-  resp.sendFile(__dirname + "/web/index.html");
-});
 νℓpage.get("/404", (req, resp) => {
   resp.render(__dirname + "/views/404.html");
 });
