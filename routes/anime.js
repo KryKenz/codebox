@@ -26,7 +26,6 @@ const { v4: uuidv4 } = require("uuid");
 var malScraper = require("mal-scraper");
 var animation = require("anime-actions");
 var { fromBuffer } = require("file-type");
-var YouTube_Scrape = require("krytek-yts");
 var { YTAudio, YTVideo } = require("../src/y2mate");
 var YouTube_Downloader = require("../src/YouTube_Downloader");
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву кяукєηz ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
