@@ -27,7 +27,6 @@ var malScraper = require("mal-scraper");
 var bodyParser = require("body-parser");
 var animation = require("anime-actions");
 var { fromBuffer } = require("file-type");
-var YouTube_Scrape = require("krytek-yts");
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву кяукєηz ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 var Spinnies = require("spinnies");
 var api = require("express");
