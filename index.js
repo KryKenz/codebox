@@ -15,7 +15,7 @@ var fs = require("fs");
 var νℓpage = express();
 require("./global");
 νℓpage.use("/anime", require("./routes/anime"));
-νℓpage.use("/dldr", require("./routes/dldr"));
+νℓpage.use("/youtube", require("./routes/youtube"));
 νℓpage.use(bodyParser.json());
 νℓpage.engine("html", require("ejs").renderFile);
 νℓpage.use(express.static(__dirname + "/views"));
